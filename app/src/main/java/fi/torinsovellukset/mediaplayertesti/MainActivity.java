@@ -7,6 +7,8 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     int i = 0;
+    int firstTime = 0;
+
     MusicPlayah musicPlayah = new MusicPlayah();
 
     @Override
@@ -18,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public void playHumppa(View v){
         System.out.println(Integer.toString(i));
         if (i == 0){
-            musicPlayah.PlaySomeMusic("http://stream.wappuradio.fi/icecast/wappuradio-legacy-streamer2.ogg");
+            musicPlayah.PlaySomeMusic("http://stream.wappuradio.fi/icecast/wappuradio-legacy-streamer2.ogg", firstTime);
+            firstTime = 1;
             i = 1;
         } else{
             i = 0;
